@@ -9,11 +9,11 @@ $$
 
 One the right side, it seems like a cubic equation, but the difference is that on the left side you have a $y^2$ instead of $y$. So, instead of:
 
-[](img/ch2-cubic-graph.png)
+![](img/ch2-cubic-graph.png)
 
 you get something like:
 
-[](img/ch2-elliptic-graph.png)
+![](img/ch2-elliptic-graph.png)
 
 This is not always true (it could actually be disjoint), but we're going to focus on a subset of all the possible elliptic curves which have a shape similar to the one in the picture.
 
@@ -50,7 +50,7 @@ So, for any two points $P_1$ and $P_2$, we define $P_1 + P_2$ as:
 - Find the point intersecting the elliptic curve a third time by drawing a line through $P_1$ and $P2$.
 - Reflect the point over the $x$-axis.
 
-[](img/ch2-addition.png)
+![](img/ch2-addition.png)
 
 ### Some Properties
 
@@ -68,7 +68,7 @@ To Code point addition we're going to split it into three cases:
 
 To represent Infinity we can use `None` in python (and in Rust as well).
 
-[](img/ch2-addition-opposites.png)
+![](img/ch2-addition-opposites.png)
 
 - Define Infinity as the zero element
 - If both points are different but have the same $x$ value return the zero element (`None`)
@@ -88,7 +88,7 @@ So the result is $(3, -1)$
 ## Point Addition for when $P_1 = P_2$
 In this case, we have to calculate the tangent to the point and find the point that intersects with the curve, as in this case:
 
-[](img/ch2-addition-equal.png)
+![](img/ch2-addition-equal.png)
 
 - $s = \frac{(3 x_1^2 + a)}{2y_1}$
 - $x_3 = s^2 - 2x_1$
@@ -108,6 +108,6 @@ So the resulting point is $(18, 77)$.
 
 There's a last case we have to take into account, which is when the tangent line is vertical, like this:
 
-[](img/ch2-addition-vertical-tangent.png)
+![](img/ch2-addition-vertical-tangent.png)
 
 This only happens if $P_1 = P_2$ and the $y$ coordinate is $0$, in which case we return the point at infinity (`None`).
